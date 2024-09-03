@@ -1,0 +1,99 @@
+Enunciado
+Objetivo: Criar e gerenciar um banco de dados para um sistema de vendas, incluindo a administração de clientes, produtos e vendas.
+
+Passos:
+
+Criar o Banco de Dados: Nomeie o banco de dados como sistema_vendas.
+Criar Tabelas:
+Clientes: Armazena informações sobre os clientes.
+id_cliente (INT, AUTO_INCREMENT, PRIMARY KEY)
+nome (VARCHAR(100), NOT NULL)
+email (VARCHAR(100), UNIQUE, NOT NULL)
+telefone (VARCHAR(15))
+Produtos: Armazena informações sobre os produtos disponíveis para venda.
+id_produto (INT, AUTO_INCREMENT, PRIMARY KEY)
+nome (VARCHAR(100), NOT NULL)
+preco (DECIMAL(10, 2), NOT NULL)
+quantidade_estoque (INT, NOT NULL)
+Vendas: Armazena informações sobre as vendas realizadas.
+id_venda (INT, AUTO_INCREMENT, PRIMARY KEY)
+id_cliente (INT, FOREIGN KEY referenciando Clientes(id_cliente))
+id_produto (INT, FOREIGN KEY referenciando Produtos(id_produto))
+quantidade (INT, NOT NULL)
+data_venda (DATE, NOT NULL)
+Inserir Dados:
+Adicione registros de clientes, produtos e vendas.
+Consultas e Relatórios:
+Liste todas as vendas realizadas, incluindo o nome do cliente e o nome do produto.
+Mostre todas as compras realizadas por um cliente específico.
+Exiba o total de vendas realizadas por produto.
+Atualizar Dados:
+Atualize o estoque de um produto após uma venda.
+Atualize as informações de um cliente.
+Excluir Dados:
+Exclua uma venda e o cliente associado, se não houver outras vendas para o mesmo cliente.
+Remova um produto e todas as vendas associadas a esse produto.
+
+# Sistema de Vendas
+
+Este projeto cria e gerencia um banco de dados para um sistema de vendas, incluindo a administração de clientes, produtos e vendas.
+
+## Estrutura do Banco de Dados
+
+### Tabelas
+
+1. **Clientes**
+   - `id_cliente` (INT, AUTO_INCREMENT, PRIMARY KEY)
+   - `nome` (VARCHAR(100), NOT NULL)
+   - `email` (VARCHAR(100), UNIQUE, NOT NULL)
+   - `telefone` (VARCHAR(15))
+
+2. **Produtos**
+   - `id_produto` (INT, AUTO_INCREMENT, PRIMARY KEY)
+   - `nome` (VARCHAR(100), NOT NULL)
+   - `preco` (DECIMAL(10, 2), NOT NULL)
+   - `quantidade_estoque` (INT, NOT NULL)
+
+3. **Vendas**
+   - `id_venda` (INT, AUTO_INCREMENT, PRIMARY KEY)
+   - `id_cliente` (INT, FOREIGN KEY referenciando `Clientes(id_cliente)`)
+   - `id_produto` (INT, FOREIGN KEY referenciando `Produtos(id_produto)`)
+   - `quantidade` (INT, NOT NULL)
+   - `data_venda` (DATE, NOT NULL)
+
+## Operações
+
+1. **Criação do Banco de Dados e Tabelas**
+
+   Execute o script SQL fornecido para criar o banco de dados `sistema_vendas` e as tabelas `Clientes`, `Produtos` e `Vendas`.
+
+2. **Inserção de Dados**
+
+   Insira dados de exemplo nas tabelas `Clientes`, `Produtos` e `Vendas`.
+
+3. **Consultas e Relatórios**
+
+   - Liste todas as vendas realizadas, incluindo o nome do cliente e o nome do produto.
+   - Mostre todas as compras realizadas por um cliente específico substituindo o `id_cliente` no comando SQL.
+   - Exiba o total de vendas realizadas por produto.
+
+4. **Atualização de Dados**
+
+   - Atualize o estoque de um produto após uma venda.
+   - Atualize as informações de um cliente.
+
+5. **Exclusão de Dados**
+
+   - Exclua uma venda específica e o cliente associado se não houver outras vendas para o mesmo cliente.
+   - Remova um produto e todas as vendas associadas a esse produto.
+
+## Executando o Script SQL
+
+1. Conecte-se ao servidor MySQL.
+2. Copie e cole o código SQL fornecido em um cliente MySQL.
+3. Execute o script para criar e gerenciar o banco de dados `sistema_vendas`.
+
+## Notas
+
+- Certifique-se de que o banco de dados e as tabelas estejam limpos antes de executar comandos de inserção e exclusão para evitar conflitos.
+
